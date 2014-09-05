@@ -1,0 +1,118 @@
+function S = walk(S, num_Nodes, ITloads, av_temp, mode)
+%% 
+%% The purpose of this function is to walk the tree upwards until a node
+%% with a degree greater than one is found.
+%%
+%% * S = structure containing node information
+%% * num_Nodes = number of nodes
+%% * ITloads = vector containing ID number of IT load nodes
+%% * av_temp = average ambient temperature
+%% * mode = redundancy mode (0 = active load sharing, 1 = standby)
+%%
+%% This function walks the tree that represents the data centre 
+%%
+%% Jose Albornoz
+%% Fujitsu Laboratories of Europe
+%% October 2011 
+%%
+
+% set number of nodes to be visited to zero
+visited = 0;
+
+% Index to IT load that is being examined
+IT_idx = 1;
+
+load = 0;
+
+% Searches for 1st IT load
+[S, idx, IT_idx, pwr_tgt, load] = search(S, num_Nodes, ITloads, IT_idx, av_temp, load, mode);
+
+% first node visited
+S(idx).Visit = 1;
+
+% next node
+idx = pwr_tgt;
+
+% visits every node
+while visited < num_Nodes
+    
+    % finds degree of node
+    degree = S(idx).Degree;
+    
+    % Node degree is 1
+    if degree == 1
+        
+        % finds target nodes
+        for i = 1:S(idx).NumConn
+            if S(idx).Conn(i) == 1
+                pwr_tgt = S(idx).Target(i);
+            elseif S(idx).Conn(i) == -1
+                cool_tgt = S(idx).Target(i);
+            end
+        end
+        
+        % node load
+        S(idx).Load = S(idx).Load + load;   % adds load from previous node in power chain
+        load = S(idx).Load;                 % actual node load  
+        
+        if S(idx).NumConn == 0              % root node reached
+            heat = loss_1(S,idx,mode,load); % calculates dissipated power
+            if(S(idx).Type == 'POWER')
+                S(idx).Pwr = heat;          % heat dissipated by 'POWER' node
+            end
+            load = load + heat;             % total power drawn by the node
+            S(idx).Draw = load;
+            S(idx).Visit = 1;               % node has been visited
+            if visited == num_Nodes - 1     % all nodes visited!
+                return
+            elseif visited < num_Nodes - 1  % there are other root nodes
+                
+                % walks the tree again
+                [S, idx, IT_idx, pwr_tgt, load] = search(S, num_Nodes, ITloads, IT_idx, av_temp, load, mode);
+                
+            end
+        elseif S(idx).NumConn == 1   
+            heat = loss_1(S,idx,mode,load);    % calculates dissipated power
+            if(S(idx).Type == 'POWER') 
+                S(idx).Pwr = heat;     % heat dissipated by 'POWER' node
+            end
+            load = load + heat;        % load for next node upwards in the power chain
+            S(idx).Draw = load;         % total power drawn by the node
+        elseif S(idx).NumConn == 2  
+            heat = loss_1(S,idx,mode,load);    % calculates dissipated power
+            if(S(idx).Type == 'POWER')
+                S(idx).Pwr = heat;     % heat dissipated by 'POWER' node
+            end
+            S(cool_tgt).Load = S(cool_tgt).Load + heat;     % heat load applied to CRAC node
+            S(cool_tgt).Degree = S(cool_tgt).Degree + 1;    % degree of CRAC node is decreased by 1
+            load = load + heat;                             % load for next node upwards in the power chain
+            S(idx).Draw = load;                              % total power drawn by the node            
+        end
+        S(idx).Visit = 1;    % the node is marked as visited
+        idx = pwr_tgt;       % next node in the power chain   
+
+    % Node degree is greater than one        
+    elseif degree > 1
+        
+        % node load subtotal
+        S(idx).Load = S(idx).Load + load;     % applies load to node
+        S(idx).Degree = S(idx).Degree - 1;    % decreases node degree by 1
+    
+        % walks the tree to find IT nodes, leaf nodes, CRACs, chillers, distributors
+        [S, idx, IT_idx, pwr_tgt, load] = search(S, num_Nodes, ITloads, IT_idx, av_temp, load, mode);
+        
+        S(idx).Visit = 1;     % the node has been visited
+        idx = pwr_tgt;        % next node in the power chain
+ 
+    end
+ 
+    % finds number of visited nodes
+    visited = 0;
+    for i = 1:num_Nodes
+        if S(i).Visit == 1
+            visited = visited + 1;
+        end
+    end
+      
+end
+

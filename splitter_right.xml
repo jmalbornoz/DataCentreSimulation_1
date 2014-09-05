@@ -1,0 +1,26 @@
+<Distributors>
+    <Name>cooling2</Name>
+    <Properties>
+        <Creator>Jose Albornoz</Creator>
+        <Name>Distributor node</Name>
+        <Description>Cooling distributor node</Description>
+        <Date>2010-09-20</Date>
+        <Source_Location>NA</Source_Location>
+        <License>Created for Fujitsu Labs</License>
+        <Copyright>Fujitsu Labs</Copyright>
+    </Properties>
+    <Version>
+        <ModelVersion>1.0</ModelVersion>
+        <DataVersion>1.0</DataVersion>
+        <SchemaVersion>1.0</SchemaVersion>
+    </Version>
+    <Tap>
+        <TapName>crac2a</TapName>
+        <Value>0.5</Value>
+    </Tap>
+    <Tap>
+        <TapName>crac2b</TapName>
+        <Value>0.5</Value>
+    </Tap>
+</Distributors>
+

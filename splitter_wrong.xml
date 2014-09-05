@@ -1,0 +1,18 @@
+<Distributors>
+    <Name>Splitter</Name>
+    <Properties>
+        <Creator>jalbornoz</Creator>
+        <Name>Data Centre Alpha</Name>
+        <Description></Description>
+        <Date>2012-04-18Z</Date>
+        <Source_Location>unknown</Source_Location>
+        <License>License</License>
+        <Copyright>Copyright</Copyright>
+    </Properties>
+    <Version>
+        <ModelVersion>1.0</ModelVersion>
+        <DataVersion>1.0</DataVersion>
+        <SchemaVersion>1.0</SchemaVersion>
+    </Version>
+</Distributors>
+

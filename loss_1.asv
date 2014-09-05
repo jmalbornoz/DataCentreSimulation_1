@@ -1,0 +1,37 @@
+function loss = loss_1(S, idx, red_mode, load)
+%% 
+%% This function calculates dissipated/consumed power of a temperature-independent
+%% M&E device
+%%
+%% * S = structure containing node information
+%% * idx = node number
+%% * red_mode = redundancy mode
+%% * load = applied load
+%%
+%%
+%% Jose Albornoz
+%% Fujitsu Laboratories of Europe
+%% June 2011 
+%%
+
+% recovers device & node information
+xx = S(idx).Points{1};     % device data points
+yy = S(idx).Points{2};
+ProvCap = S(idx).ProvCap;  % provisioned capacity
+DevCap = S(idx).Cap;       % device capacity
+NDev = S(idx).NDev;        % number of devices
+
+% redundancy mode is considered
+if(red_mode == 0)                 % active load sharing
+    N = NDev;
+elseif(red_mode == 1)             % standby
+    N = ceil(ProvCap/DevCap);     % number of active devices
+    Nstdby = NDev - N;            % number of devices in stand-by (zero load, but may have losses)
+end
+
+% computes loss using cubic spline fit for the device
+if(red_mode == 0 || (red_mode == 1 && Nstdby == 0))           % active load sharing
+    loss = spline(xx,yy,load/(N*DevCap))*N*DevCap;
+elseif(red_mode == 1 && Nstdby ~= 0)                        % standby
+    loss = spline(xx,yy,load/(N*DevCap))*N*DevCap + spline(xx,yy,0)*Nstdby*DevCap;
+end

@@ -1,0 +1,113 @@
+<TemplateElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Name>OCP V2</Name>
+   <Devices>
+      <Name>Services</Name>
+      <Type>OTHER</Type>
+      <Connections>
+         <Type>Power</Type>
+         <Target>Main switch board</Target>
+      </Connections>
+      <Priority>20.0</Priority>
+   </Devices>
+   <Devices>
+      <Name>UPS</Name>
+      <Type>OTHER</Type>
+      <Connections>
+         <Type>Power</Type>
+         <Target>RDD</Target>
+      </Connections>
+      <Connections>
+         <Type>Cooling</Type>
+         <Target>Main fans</Target>
+      </Connections>
+      <Priority>20.0</Priority>
+   </Devices>
+   <Devices>
+      <Name>Main transformer</Name>
+      <Type>POWER</Type>
+      <Priority>20.0</Priority>
+   </Devices>
+   <Devices>
+      <Name>Main fans</Name>
+      <Type>COOLING</Type>
+      <Connections>
+         <Type>Power</Type>
+         <Target>Main switch board</Target>
+      </Connections>
+      <Connections>
+         <Type>Cooling</Type>
+         <Target>Relief fans</Target>
+      </Connections>
+      <Priority>20.0</Priority>
+   </Devices>
+   <Devices>
+      <Name>RDD</Name>
+      <Type>POWER</Type>
+      <Connections>
+         <Type>Power</Type>
+         <Target>Main switch board</Target>
+      </Connections>
+      <Connections>
+         <Type>Cooling</Type>
+         <Target>Main fans</Target>
+      </Connections>
+      <Priority>20.0</Priority>
+   </Devices>
+   <Devices>
+      <Name>Osmosis</Name>
+      <Type>COOLING</Type>
+      <Connections>
+         <Type>Power</Type>
+         <Target>Main switch board</Target>
+      </Connections>
+      <Priority>20.0</Priority>
+   </Devices>
+   <Devices>
+      <Name>Main switch board</Name>
+      <Type>POWER</Type>
+      <Connections>
+         <Type>Power</Type>
+         <Target>Main transformer</Target>
+      </Connections>
+      <Priority>20.0</Priority>
+   </Devices>
+   <Devices>
+      <Name>IT severs</Name>
+      <Type>LOAD</Type>
+      <Connections>
+         <Type>Power</Type>
+         <Target>RDD</Target>
+      </Connections>
+      <Connections>
+         <Type>Cooling</Type>
+         <Target>Main fans</Target>
+      </Connections>
+      <Priority>20.0</Priority>
+   </Devices>
+   <Devices>
+      <Name>Relief fans</Name>
+      <Type>COOLING</Type>
+      <Connections>
+         <Type>Power</Type>
+         <Target>Main switch board</Target>
+      </Connections>
+      <Connections>
+         <Type>Cooling</Type>
+         <Target>Sprays</Target>
+      </Connections>
+      <Priority>20.0</Priority>
+   </Devices>
+   <Devices>
+      <Name>Sprays</Name>
+      <Type>COOLING</Type>
+      <Connections>
+         <Type>Power</Type>
+         <Target>Main switch board</Target>
+      </Connections>
+      <Connections>
+         <Type>Cooling</Type>
+         <Target>Osmosis</Target>
+      </Connections>
+      <Priority>20.0</Priority>
+   </Devices>
+</TemplateElement>

@@ -1,0 +1,42 @@
+
+<InfrastructureDevices>
+    <Name>Cooling Tower 3</Name>
+    <Installed>
+        <Date>1970-01-01Z</Date>
+        <Number>1.0</Number>
+        <Capacity>3125000.0</Capacity>
+    </Installed>
+    <DeviceDetails>
+        <Device>
+            <Manufacturer>Generic</Manufacturer>
+            <Model>3125kW Cooling Tower</Model>
+            <Specification>3125kW Cooling Tower</Specification>
+        </Device>
+        <Properties>
+            <Name>Generic 3125kW Cooling Tower</Name>
+            <Description>3125kW Cooling Tower</Description>
+        </Properties>
+        <LossGroup>
+            <Name>3125kW Cooling Tower</Name>
+            <Capacity>3125000.0</Capacity>
+            <LossGrid>
+                <Interpolation>LINEAR</Interpolation>
+                <Grid>
+                    <KeyParameter>0.0</KeyParameter>
+                    <Line>
+                        <Load>0.0</Load>
+                        <Loss>0.001</Loss>
+                    </Line>
+                    <Line>
+                        <Load>1.0</Load>
+                        <Loss>0.01</Loss>
+                    </Line>
+                </Grid>
+            </LossGrid>
+        </LossGroup>
+        <NameplateDraw>0.0</NameplateDraw>
+        <Type>Cooler</Type>
+    </DeviceDetails>
+    <ProvisioningStrategy>CALCULATED</ProvisioningStrategy>
+    <ProvisioningFactor>1.0</ProvisioningFactor>
+</InfrastructureDevices>

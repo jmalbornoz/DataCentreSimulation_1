@@ -1,0 +1,44 @@
+
+<InfrastructureDevices>
+    <Name>Cooling Tower 3</Name>
+    <Installed>
+        <Date>2011-01-01Z</Date>
+        <Number>1.0</Number>
+        <Capacity>3125.0</Capacity>
+    </Installed>
+    <WriteDownTime>0.0</WriteDownTime>
+    <CapitalCost>0.0</CapitalCost>
+    <DeviceDetails>
+        <Device>
+            <Manufacturer>Generic</Manufacturer>
+            <Model>3.125 MW Cooling Tower</Model>
+            <Specification></Specification>
+        </Device>
+        <Properties>
+            <Creator>jalbornoz</Creator>
+            <Name>Data Center Beta</Name>
+            <Description></Description>
+            <Date>2012-04-19Z</Date>
+            <Source_Location>unknown</Source_Location>
+            <License>License</License>
+            <Copyright>Copyright</Copyright>
+        </Properties>
+        <Version>
+            <ModelVersion>1.0</ModelVersion>
+            <DataVersion>1.0</DataVersion>
+            <SchemaVersion>1.0</SchemaVersion>
+        </Version>
+        <LossGroup>
+            <Name>Lossgroup</Name>
+            <Capacity>3125.0</Capacity>
+            <LossGrid>
+                <Interpolation>LINEAR</Interpolation>
+                <Grid>
+                    <KeyParameter>0.0</KeyParameter>
+                </Grid>
+            </LossGrid>
+        </LossGroup>
+        <NameplateDraw>0.0</NameplateDraw>
+    </DeviceDetails>
+    <ProvisioningStrategy>CALCULATED</ProvisioningStrategy>
+</InfrastructureDevices>

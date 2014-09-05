@@ -1,0 +1,342 @@
+<TemplateElement
+xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Name>Data Centre Alpha</Name>
+    <Description></Description>
+    <Devices>
+        <Name>Splitter</Name>
+        <Type>DISTRIBUTOR</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 2B</Target>
+        </Connections>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 2A</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>IT Load 2</Name>
+        <Type>LOAD</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Splitter</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Cables 1</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Cables 1</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Splitter</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU 2A</Target>
+        </Connections>
+        <Description>Pure quadratic loss, max loss 1.5%</Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>PDU 2A</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Splitter</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>UPS A</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>CRAC 2A</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Chiller 2A</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU 2B</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>CRAC 2B</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Chiller 2B</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU 2B</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>CRAC 3</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Chiller 3</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU B</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>IT Load 3</Name>
+        <Type>LOAD</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 3</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Cables 3</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Cables 3</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 3</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU 3</Target>
+        </Connections>
+        <Description>Pure quadratic loss, max loss 1.5%</Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>PDU 3</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 3</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>UPS 3</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>UPS 3</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 3</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU B</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>CRAC 1</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU 1B</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>IT Load 1</Name>
+        <Type>LOAD</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 1</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Cables 2</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Cables 2</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 1</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU 1A</Target>
+        </Connections>
+        <Description>Pure quadratic loss, max loss 1.5%</Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>PDU 1A</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 1</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>UPS A</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Chiller 3</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU B</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Chiller 2B</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU 2B</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Chiller 2A</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU 2B</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Chiller A</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU B</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>CRAC A</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Chiller A</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU B</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>PDU 2B</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU B</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Trans B</Name>
+        <Type>POWER</Type>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>PDU B</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Trans B</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Chiller 1</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU 1B</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>PDU 1B</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU B</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>UPS A</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC A</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU A</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>PDU A</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Trans A</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Trans A</Name>
+        <Type>POWER</Type>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+</TemplateElement>
+

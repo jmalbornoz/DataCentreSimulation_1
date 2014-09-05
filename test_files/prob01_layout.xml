@@ -1,0 +1,73 @@
+<TemplateElement 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Name>Data centre</Name>
+    <Description></Description>
+    <Devices>
+        <Name>AHU</Name>
+        <Type>COOLING </Type>
+        <Connections>
+            <Type>Cooling </Type>
+            <Target>Chillers</Target>
+        </Connections>
+        <Connections>
+            <Type>Power </Type>
+            <Target>Transformer</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>PDU</Name>
+        <Type>POWER </Type>
+        <Connections>
+            <Type>Cooling </Type>
+            <Target>Chillers</Target>
+        </Connections>
+        <Connections>
+            <Type>Power </Type>
+            <Target>UPS</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>IT Load</Name>
+        <Type>LOAD</Type>
+        <Connections>
+            <Type>Cooling </Type>
+            <Target>AHU</Target>
+        </Connections>
+        <Connections>
+            <Type>Power </Type>
+            <Target>PDU</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Chillers</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Power </Type>
+            <Target>Transformer</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Transformer</Name>
+        <Type>POWER </Type>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>UPS</Name>
+        <Type>POWER </Type>
+        <Connections>
+            <Type>Power </Type>
+            <Target>Transformer</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+</TemplateElement>

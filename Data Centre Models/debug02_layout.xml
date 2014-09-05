@@ -1,0 +1,91 @@
+<TemplateElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Name>temp</Name>
+   <Devices>
+      <Name>Chiller</Name>
+      <Type>COOLING</Type>
+      <Connections>
+         <Type>Power</Type>
+         <Target>ME Transformer</Target>
+      </Connections>
+      <Connections>
+         <Type>Cooling</Type>
+         <Target>Cooling tower</Target>
+      </Connections>
+      <Priority>20.0</Priority>
+   </Devices>
+   <Devices>
+      <Name>UPS AHU</Name>
+      <Type>COOLING</Type>
+      <Connections>
+         <Type>Power</Type>
+         <Target>ME Transformer</Target>
+      </Connections>
+      <Connections>
+         <Type>Cooling</Type>
+         <Target>Chiller</Target>
+      </Connections>
+      <Priority>20.0</Priority>
+   </Devices>
+   <Devices>
+      <Name>ME Transformer</Name>
+      <Type>POWER</Type>
+      <Connections>
+         <Type>Power</Type>
+         <Target>Main transformer</Target>
+      </Connections>
+      <Priority>20.0</Priority>
+   </Devices>
+   <Devices>
+      <Name>IT AHU</Name>
+      <Type>COOLING</Type>
+      <Connections>
+         <Type>Power</Type>
+         <Target>ME Transformer</Target>
+      </Connections>
+      <Connections>
+         <Type>Cooling</Type>
+         <Target>Chiller</Target>
+      </Connections>
+      <Priority>20.0</Priority>
+   </Devices>
+   <Devices>
+      <Name>IT Load</Name>
+      <Type>LOAD</Type>
+      <Connections>
+         <Type>Cooling</Type>
+         <Target>IT AHU</Target>
+      </Connections>
+      <Connections>
+         <Type>Power</Type>
+         <Target>IT UPS</Target>
+      </Connections>
+      <Priority>20.0</Priority>
+   </Devices>
+   <Devices>
+      <Name>Main transformer</Name>
+      <Type>POWER</Type>
+      <Priority>20.0</Priority>
+   </Devices>
+   <Devices>
+      <Name>IT UPS</Name>
+      <Type>POWER</Type>
+      <Connections>
+         <Type>Cooling</Type>
+         <Target>UPS AHU</Target>
+      </Connections>
+      <Connections>
+         <Type>Power</Type>
+         <Target>Main transformer</Target>
+      </Connections>
+      <Priority>20.0</Priority>
+   </Devices>
+   <Devices>
+      <Name>Cooling tower</Name>
+      <Type>COOLING</Type>
+      <Connections>
+         <Type>Power</Type>
+         <Target>ME Transformer</Target>
+      </Connections>
+      <Priority>20.0</Priority>
+   </Devices>
+</TemplateElement>

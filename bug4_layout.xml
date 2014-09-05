@@ -1,0 +1,910 @@
+<TemplateElement
+xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Name>Data Center Beta</Name>
+    <Description></Description>
+    <Devices>
+        <Name>Cooling Tower 3</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>MCC 3</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Cooling Tower 2</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>MCC 2</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Pump Cond 3</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Cooling Tower 3</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>MCC 3</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Chiller 3</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Pump Cond 3</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>MCC 3</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Pump Cond 2</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Cooling Tower 2</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>MCC 2</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Chiller 2</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Pump Cond 2</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>MCC 2</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Splitter</Name>
+        <Type>DISTRIBUTOR</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Pump Pri 3</Target>
+        </Connections>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Pump Pri 2</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Pump Pri 3</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Chiller 3</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>MCC 3</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Pump Pri 2</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Chiller 2</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>MCC 2</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>SCPH 2A/2B </Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Splitter</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>MCC 2</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>PDU 5</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Splitter H5</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Cables 2</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Cables H5</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Splitter H5</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU 5</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>IT Load 5</Name>
+        <Type>LOAD</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Splitter H5</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Cables H5</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>CRAC 5B</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>SCPH 2A/2B </Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU IT2/CRAC</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Splitter H5</Name>
+        <Type>DISTRIBUTOR</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 5A</Target>
+        </Connections>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 5B</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>CRAC 5A</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>SCPH 2A/2B </Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU IT1/CRAC</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>PDU 2</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Splitter H2</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Cables 3</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>IT Load 2</Name>
+        <Type>LOAD</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Splitter H2</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Cables H2</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Cables H2</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Splitter H2</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU 2</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>CRAC 2A</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>SCPH 2A/2B </Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU IT1/CRAC</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Splitter H2</Name>
+        <Type>DISTRIBUTOR</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 2B</Target>
+        </Connections>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 2A</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>CRAC 2B</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>SCPH 2A/2B </Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU IT2/CRAC</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Cables H1 </Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 1 </Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU 1 </Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>PDU 1 </Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 1 </Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Cables 3</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>CRAC 1 </Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>SCPH 1A/1B </Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU IT1/CRAC</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>IT Load 1 </Name>
+        <Type>LOAD</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 1 </Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Cables H1 </Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>SCPH 1A/1B </Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Splitter</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>MCC 1</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>CRAC CR2</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>SCPH 1A/1B </Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU IT1/CRAC</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>PDU CR2</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Cables 2</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Cables CR2</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU CR2</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>IT Load CR2</Name>
+        <Type>LOAD</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Cables CR2</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>MCC 3</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>SMDB 1/2</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>SCPH 3A/3B</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>Splitter</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>MCC 3</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>MCC 1</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>SMDB 1/2</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>PDU BR CRAC</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>SMDB 1/2</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>MCC 2</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>SMDB 1/2</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Lights</Name>
+        <Type>OTHER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>SMDB 1/2</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>AHU Load</Name>
+        <Type>OTHER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>SMDB 1/2</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>SMDB 1/2</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Cables 1</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Cables 1</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>M1 A/B</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>M1 A/B</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>HVA/HVB</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>CRAC BR</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>SCPH 3A/3B</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU BR CRAC</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>IT Load BR</Name>
+        <Type>LOAD</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC BR</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Cables BR</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Cables BR</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC BR</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU BR</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>PDU BR</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC BR</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU BR CRAC</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>CRAC CR1</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>SCPH 3A/3B</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU IT2/CRAC</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>PDU CR1</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC CR1</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Cables 3</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>CRAC 6</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>SCPH 1A/1B </Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU IT2/CRAC</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>PDU 6</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 6</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Cables 2</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>IT Load 6</Name>
+        <Type>LOAD</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 6</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Cables H6</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Cables H6</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 6</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU 6</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>CRAC 4</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>SCPH 3A/3B</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU IT2/CRAC</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>IT Load 4</Name>
+        <Type>LOAD</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 4</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Cables H4</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>CRAC 3</Name>
+        <Type>COOLING</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>SCPH 3A/3B</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU IT1/CRAC</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Cables H4</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 4</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU 4</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>PDU 4</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 4</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Cables 2</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>IT Load CR1</Name>
+        <Type>LOAD</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC CR1</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Cables CR1</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Cables CR1</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC CR1</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU CR1</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>PDU IT2/CRAC</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Cables 2</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Cables 2</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>IT2A/IT2B</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>IT2A/IT2B</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>HVA/HVB</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>HVA/HVB</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>UPS Choke</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>PDU IT1/CRAC</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Cables 3</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>PDU 3</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 3</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Cables 3</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Cables H3</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 3</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>PDU 3</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>IT Load 1</Name>
+        <Type>LOAD</Type>
+        <Connections>
+            <Type>Cooling</Type>
+            <Target>CRAC 3</Target>
+        </Connections>
+        <Connections>
+            <Type>Power</Type>
+            <Target>Cables H3</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>Cables 3</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>IT1A/IT1B</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>IT1A/IT1B</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>HVA/HVB</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>UPS Losses</Name>
+        <Type>OTHER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>UPS Trans</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>UPS Trans</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>UPS Choke</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>UPS Choke</Name>
+        <Type>POWER</Type>
+        <Connections>
+            <Type>Power</Type>
+            <Target>HVSB</Target>
+        </Connections>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+    <Devices>
+        <Name>HVSB</Name>
+        <Type>POWER</Type>
+        <Description></Description>
+        <Priority>20.0</Priority>
+    </Devices>
+</TemplateElement>
+

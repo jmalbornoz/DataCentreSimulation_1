@@ -1,0 +1,32 @@
+<CERESInstalledDevice
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Name>3.0 MW Water Pump</Name>
+    <DeviceType>pump</DeviceType>
+    <Installed>
+        <Number>1.0</Number>
+        <Capacity>3000</Capacity>
+    </Installed>
+    <DeviceDetails>
+        <Device>
+            <Manufacturer>Generic</Manufacturer>
+            <Model>3.0 MW Water Pump</Model>
+            <Specification></Specification>
+        </Device>
+        <LossGroup>
+            <Name>Lossgroup</Name>
+            <LossGrid>
+                <Grid>
+                    <KeyParameter>0.0</KeyParameter>
+                    <Line>
+                        <Load>0.0</Load>
+                        <Loss>0.01833</Loss>
+                    </Line>
+                    <Line>
+                        <Load>1.0</Load>
+                        <Loss>0.01833</Loss>
+                    </Line>
+                </Grid>
+            </LossGrid>
+        </LossGroup>
+    </DeviceDetails>
+</CERESInstalledDevice>
